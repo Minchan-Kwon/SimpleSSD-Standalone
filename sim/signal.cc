@@ -123,18 +123,18 @@ LONG WINAPI exceptionHandler(LPEXCEPTION_POINTERS pExceptionInfo) {
 
 #include <execinfo.h>
 #include <unistd.h>
-
+#include <vector>
 #define FRAMECOUNT 32
 
-static uint8_t stack[SIGSTKSZ * 2];
+static std::vector<uint8_t> stack(SIGSTKSZ * 2);
 
 void print_backtrace();
 
 static bool setupStack() {
   stack_t st;
 
-  st.ss_sp = stack;
-  st.ss_size = sizeof(stack);
+  st.ss_sp = stack.data();
+  st.ss_size = stack.size();
   st.ss_flags = 0;
 
   return sigaltstack(&st, nullptr) == 0;

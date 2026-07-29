@@ -18,6 +18,8 @@
  */
 
 #include "util/convert.hh"
+#include <cstring>
+#include <strings.h>
 
 #include <regex>
 
