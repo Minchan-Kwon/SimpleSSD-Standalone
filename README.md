@@ -6,3 +6,11 @@ For more information, please visit [SimpleSSD homepage](http://simplessd.org).
 
 ## Licenses
 SimpleSSD is released under the GPLv3 license. See `LICENSE` file for details.
+
+
+## How to Use
+Run the following command:
+
+```./simplessd-standalone ./config/dma.cfg ./simplessd/config/dma.cfg ./output```
+
+You can configure the maximum number of preemption in `simplessd/config/dma.cfg`.
